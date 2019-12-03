@@ -11,10 +11,15 @@
 # Assume your user is a developer — e.g. you don't need to write a user interface.
 
 def pig_latin(word)
-
+  if "aeiou".include? word.chr
+    word += "way"
+  else
+    word += word.chr + "ay"
+    word = word[1..-1]
+  end
 end
 
-## Tests:
+# Tests:
 
 require_relative './helpers/assert_equal'
 assert_equal(pig_latin('dog'), 'ogday')
