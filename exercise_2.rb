@@ -8,7 +8,15 @@
 # Still assume the words are lowercase.
 
 def pig_latin(word)
-
+  if "aeiou".include? word.chr
+    word += "way"
+  else
+    until "aeiou".include? word.chr
+      word += word.chr
+      word = word[1..-1]
+    end
+    word += "ay"
+  end
 end
 
 ## Tests:
